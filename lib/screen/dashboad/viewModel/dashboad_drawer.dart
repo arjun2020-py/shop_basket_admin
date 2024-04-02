@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/custom_color.dart';
 import '../../../utils/custom_widget/custom_text.dart';
+import '../../add_product/view/screen_add_product.dart';
 import 'custom_list_tile.dart';
 
 class DashboadDrawer extends StatelessWidget {
@@ -47,13 +48,17 @@ class DashboadDrawer extends StatelessWidget {
           ),
           CustomListTile(
             text: 'Products',
-            icons: Icons.inventory_2,
+            icons: Icons.grid_view,
             onTap: () {},
           ),
           CustomListTile(
             text: 'Add Product',
             icons: Icons.add,
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => AddProductScreen(),
+              ));
+            },
           ),
           CustomListTile(
             text: 'Delivery Boy',

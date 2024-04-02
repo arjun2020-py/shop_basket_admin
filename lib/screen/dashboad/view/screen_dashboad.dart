@@ -32,6 +32,8 @@ class ScreenDashboad extends StatelessWidget {
           ),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             verticalSizedBox(50),
             const Row(
@@ -43,7 +45,7 @@ class ScreenDashboad extends StatelessWidget {
                   count: '200',
                 ),
                 CustomCardData(
-                    text: 'Products', icons: Icons.inventory_2, count: '26')
+                    text: 'Products', icons: Icons.grid_view, count: '26')
               ],
             ),
             verticalSizedBox(30),
@@ -56,6 +58,14 @@ class ScreenDashboad extends StatelessWidget {
                     text: 'Delivery Boy',
                     icons: Icons.directions_bike,
                     count: '4')
+              ],
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CustomCardData(
+                    text: 'Sold out', icons: Icons.storefront, count: '4'),
+                CustomCardData(text: 'Low in stock', icons: Icons.published_with_changes, count: '2')     
               ],
             )
           ],

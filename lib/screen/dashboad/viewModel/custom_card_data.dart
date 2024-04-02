@@ -4,14 +4,18 @@ import '../../../utils/custom_color.dart';
 import '../../../utils/custom_widget/custom_text.dart';
 
 class CustomCardData extends StatelessWidget {
-  const CustomCardData({super.key, required this.text, required this.icons,required this.count});
+  const CustomCardData(
+      {super.key,
+      required this.text,
+      required this.icons,
+      required this.count});
   final String text;
   final IconData icons;
   final String count;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180,
+      width: 160,
       height: 150,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: customCardColor),

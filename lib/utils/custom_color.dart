@@ -7,3 +7,4 @@ Color appSplshNameColor = Color(0xffeff6f5);
 Color customCardColor = Color(0xfff4f7f6);
 Color whiteColor = Colors.white;
 Color blackColor = Colors.black;
+Color transprentColor = Colors.transparent;
