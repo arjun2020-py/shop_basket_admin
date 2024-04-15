@@ -8,3 +8,17 @@ Color customCardColor = Color(0xfff4f7f6);
 Color whiteColor = Colors.white;
 Color blackColor = Colors.black;
 Color transprentColor = Colors.transparent;
+Color deleteCardColor = Color(0xFFFE4A49);
+Color updateCardColor = Color(0xFF21B7CA);
+Color greenColor = Colors.green;
+
+//user color
+
+Color userAppMainColor = Color(0xfff3f5f8);
+Color appAuthManibColor = Color(0xfff7f6fb);
+Color buttonPrimaryColor = Color(0xff9d3bb0);
+
+Color gryColor = Colors.grey;
+
+Color buttonColor = Color(0xff4eaa4b);
+Color blueColor = Colors.blue;

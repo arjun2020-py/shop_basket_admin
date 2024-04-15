@@ -6,6 +6,8 @@ verticalSizedBox(double hieght) {
   );
 }
 
-horoztalSizedBox(double width) async {
-  return SizedBox(width: width,);
+horzotalSizedBox(double width) {
+  return SizedBox(
+    width: width,
+  );
 }
