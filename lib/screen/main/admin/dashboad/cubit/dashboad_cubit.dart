@@ -9,7 +9,7 @@ class DashboadCubit extends Cubit<DashboadState> {
   DashboadCubit(this.context) : super(DashboadInitial());
   BuildContext context;
   logout() async {
-    FirebaseAuth.instance.signOut();
+  FirebaseAuth.instance.signOut();
     SharedPreferences prf = await SharedPreferences.getInstance();
     prf.clear();
     Navigator.of(context).pop();

@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="shop_basket_admin"
+        android:label="Shopping Basket"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

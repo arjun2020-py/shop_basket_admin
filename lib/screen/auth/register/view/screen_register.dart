@@ -61,28 +61,37 @@ class ScreenRegister extends StatelessWidget {
                           ),
                         ),
                         CustomTextfiled(
+                          obscureText: false,
                           hintText: 'email',
                           controller: cubit.emailCtr,
                           validator: (value) => cubit.emailValidator(value!),
                         ),
                         verticalSizedBox(10),
                         CustomTextfiled(
+                          obscureText: false,
                           hintText: 'mobile',
                           controller: cubit.mobCtr,
                           validator: (value) => cubit.mobileValidator(value!),
                         ),
                         verticalSizedBox(10),
                         CustomTextfiled(
+                          obscureText: cubit.ispasswordVisible,
+                          icons: cubit.ispasswordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                           hintText: 'password',
                           controller: cubit.passwordCtr,
                           validator: (value) => cubit.passwordValidator(value!),
+                          sufixOnPressed: () {
+                            cubit.passIsVisbleCheck();
+                          },
                         ),
                         verticalSizedBox(10),
                         CustomElevButton(
                           width: MediaQuery.sizeOf(context).width * 0.8,
                           onPressed: () {
-                            String email = cubit.emailCtr.text;
-                            String password = cubit.passwordCtr.text;
+                            String email = cubit.emailCtr.text.trim();
+                            String password = cubit.passwordCtr.text.trim();
                             cubit.regiserButtonClick(email, password);
                           },
                           boderRadius: 20,
@@ -101,9 +110,10 @@ class ScreenRegister extends StatelessWidget {
                           optionText: "All ready have an account?",
                           textButtonText: 'Login',
                           onPressed: () {
-                        
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ScreenLogin(role: cubit.dropdownValue,),
+                              builder: (context) => ScreenLogin(
+                                role: cubit.dropdownValue,
+                              ),
                             ));
                           },
                         )

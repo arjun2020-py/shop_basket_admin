@@ -21,6 +21,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   String dropdownValue = "admin";
 
   var items = ["admin", "user"];
+  bool ispasswordVisible = true;
   dropdownValueChange(String value) {
     dropdownValue = value;
     emit(RegisterInitial());
@@ -42,6 +43,11 @@ class RegisterCubit extends Cubit<RegisterState> {
     if (value.isEmpty) {
       return "password is not vaild";
     }
+  }
+
+  passIsVisbleCheck() {
+    ispasswordVisible = !ispasswordVisible;
+    emit(RegisterInitial());
   }
 
   userRegister(String email, String password) async {
@@ -83,9 +89,9 @@ class RegisterCubit extends Cubit<RegisterState> {
       FirebaseFirestore.instance.collection('user_collection').add({
         "role": dropdownValue,
         "time": DateTime.now(),
-        "email": emailCtr.text,
-        "mobile": mobCtr.text,
-        "password": passwordCtr.text
+        "email": emailCtr.text.trim(),
+        "mobile": mobCtr.text.trim(),
+        "password": passwordCtr.text.trim()
       }).then((value) => Navigator.of(context).pushReplacement(
           MaterialPageRoute(
               builder: (context) => dropdownValue == 'admin'

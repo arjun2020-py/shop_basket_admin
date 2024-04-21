@@ -31,7 +31,7 @@ class SplashCubit extends Cubit<SplashState> {
   splash() async {
     var data = LocalStorage();
      role = await data.getStringPrf();
-    Future.delayed(Duration(milliseconds: 800), () {
+    Future.delayed(Duration(seconds: 1), () {
       switch (authStatus) {
         case AuthStatus.notSignedIn:
           Navigator.of(context).pushReplacement(MaterialPageRoute(

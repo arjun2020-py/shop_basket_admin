@@ -124,13 +124,15 @@ class ScreenHome extends StatelessWidget {
                       title: 'Categories',
                     ),
                   ),
-                  InkWell(
-                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => DetailedCategoryScreen(),
-                          )),
-                      child: CustomCategorySection(
-                        homeCubit: cubit,
-                      )),
+                  // InkWell(
+                  //     onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  //           builder: (context) => DetailedCategoryScreen(),
+                  //         )),
+                  //     child:
+                  CustomCategorySection(
+                    homeCubit: cubit,
+                  ),
+                  //  ),
                   CustomCategorySectionText(title: 'Recommend'),
                   CustomRecommendScreen(
                     homeCubit: cubit,

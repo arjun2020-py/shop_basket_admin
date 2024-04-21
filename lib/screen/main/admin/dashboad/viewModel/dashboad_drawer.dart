@@ -7,6 +7,7 @@ import '../../add_product/view/screen_add_product.dart';
 import '../../category/view/screen_category.dart';
 import '../../change_language/view/screen_change_language.dart';
 import '../../product/view/screen_product.dart';
+import '../cubit/dashboad_cubit.dart';
 import 'custom_list_tile.dart';
 
 class DashboadDrawer extends StatelessWidget {
@@ -118,11 +119,6 @@ class DashboadDrawer extends StatelessWidget {
             thickness: 0.3,
             color: blackColor,
           ),
-          CustomListTile(
-            text: 'Logout',
-            icons: Icons.logout,
-            onTap: () {},
-          )
         ],
       ),
     );

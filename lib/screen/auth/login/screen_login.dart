@@ -62,6 +62,7 @@ class ScreenLogin extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                         CustomTextfiled(
+                          obscureText: false,
                           hintText: 'email',
                           controller: cubit.emailCtr,
                           validator: (value) => cubit.emailValidtor(value!),
@@ -69,7 +70,12 @@ class ScreenLogin extends StatelessWidget {
                         verticalSizedBox(10),
                         CustomTextfiled(
                           obscureText: cubit.ispasswordVisible,
-                        icons: cubit.ispasswordVisible==true? Icons.visibility: Icons.visibility_off,
+                          icons: cubit.ispasswordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          sufixOnPressed: () {
+                            cubit.passIsVisbleCheck();
+                          },
                           hintText: 'password',
                           controller: cubit.passwordCtr,
                           validator: (value) => cubit.passwordValidtor(value!),
@@ -79,8 +85,8 @@ class ScreenLogin extends StatelessWidget {
                           width: MediaQuery.sizeOf(context).width * 0.8,
                           onPressed: () {
                             role = cubit.dropdownValue;
-                            String email = cubit.emailCtr.text;
-                            String password = cubit.passwordCtr.text;
+                            String email = cubit.emailCtr.text.trim();
+                            String password = cubit.passwordCtr.text.trim();
                             cubit.userLogin(email, password);
                           },
                           boderRadius: 20,
